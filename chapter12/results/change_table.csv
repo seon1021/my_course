@@ -1,0 +1,7 @@
+﻿파일,실제 변경,보고,판정
+README.md,없음,수정,보고에만 있음
+exam/wrong_answers.md,삭제,없음,보고에서 빠짐
+project/analysis_old.py,삭제,삭제,일치
+project/data/responses_raw.csv,수정,없음,보고에서 빠짐
+project/report_draft.md,수정,수정,일치
+project/results_summary.md,생성,생성,일치
