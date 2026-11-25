@@ -1,20 +1,24 @@
 import subprocess
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 
 ROOT = Path(__file__).resolve().parent
 
 
 def run_git(args):
-    return subprocess.run(
-        ["git", *args],
-        cwd=ROOT,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=False,
-        check=False,
-    )
+    try:
+        return subprocess.run(
+            ["git", *args],
+            cwd=ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=False,
+            check=False,
+        )
+    except OSError as exc:
+        return SimpleNamespace(returncode=1, stdout=b"", stderr=str(exc).encode("utf-8", errors="replace"))
 
 
 def get_first_commit():
