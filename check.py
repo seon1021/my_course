@@ -85,7 +85,7 @@ def main():
 
     print(output_text)
 
-    if len(sys.argv) >= 2:
+    if len(sys.argv) == 2:
         output_path = Path(sys.argv[1])
         output_path.write_text(output_text + "\n", encoding="utf-8")
 
